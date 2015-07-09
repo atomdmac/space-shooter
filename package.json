@@ -1,0 +1,24 @@
+{
+  "name": "space-shooter",
+  "version": "0.0.1",
+  "description": "A stupid simple space shooter to help me learn Phaser.js",
+  "main": "index.html",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-webserver": "^0.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suicidepills/space-shooter.git"
+  },
+  "author": "suicidepills",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suicidepills/space-shooter/issues"
+  },
+  "homepage": "https://github.com/suicidepills/space-shooter#readme"
+}
