@@ -31,7 +31,6 @@ Bullet.prototype.fire = function (x, y, angle, speed, gx, gy) {
     this.reset(x, y);
     this.scale.set(1);
 
-
     this.angle = angle;
 
 };
@@ -43,7 +42,7 @@ Weapons.Rocket = function (game) {
     Phaser.Group.call(this, game, game.world, 'Rocket', false, true, Phaser.Physics.ARCADE);
 
     this.nextFire = 0;
-    this.bulletSpeed = 600;
+    this.bulletSpeed = 1000;
     this.bulletAcceleration = 300;
     this.fireRate = 100;
 
@@ -65,13 +64,13 @@ Weapons.Rocket.prototype.fire = function (source) {
     if (this.game.time.time < this.nextFire) { return; }
 
     var x = source.x;
-    var y = source.y;
+    var y = source.y - (source.height / 2);
 
     var rocket = this.getFirstExists(false);
-    	rocket.fire(x, y, 0, this.bulletSpeed, 0, 0);
-        rocket.body.velocity.x = this.bulletSpeed * 0.25;
-    	rocket.body.acceleration.x = this.bulletAcceleration;
-    	rocket.body.maxVelocity.x = this.bulletSpeed;
+    	rocket.fire(x, y, 0, -this.bulletSpeed, 0, 0);
+        rocket.body.velocity.y = -this.bulletSpeed * 0.75;
+    	rocket.body.acceleration.y = -this.bulletAcceleration;
+    	rocket.body.maxVelocity.y = this.bulletSpeed;
 
     this.nextFire = this.game.time.time + this.fireRate;
 

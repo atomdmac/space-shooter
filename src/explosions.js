@@ -7,7 +7,7 @@ var Explosions = function (game, key) {
 
     Phaser.Group.call(this, game, game.world, 'Explosions', false, true, Phaser.Physics.ARCADE);
 
-    var sprite, anim
+    var sprite, anim;
     for(var i=0; i<64; i++) {
         sprite = new Phaser.Sprite(game, 0, 0, key);
         sprite.checkWorldBounds = true;

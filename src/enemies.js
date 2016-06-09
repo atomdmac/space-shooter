@@ -28,16 +28,12 @@ BadGuy.prototype.spawn = function (x, y, angle, speed, gx, gy) {
     gy = gy || 0;
 
     this.reset(x, y);
-    this.scale.set(1);
+    this.scale.set(1 + (1*Math.random()));
 
     this.angle = angle;
 
-    this.body.acceleration.x = -100 + (50 * Math.random());
-};
-BadGuy.prototype.update = function () {
-    if(this.x < -this.width) {
-        this.kill();
-    }
+    this.body.maxVelocity.y = 100 + (50 * Math.random());
+    this.body.acceleration.y = 100 + (50 * Math.random());
 };
 
 var Enemies = {};
